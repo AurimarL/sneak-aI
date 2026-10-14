@@ -106,7 +106,6 @@ export default function MarketplacePage() {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans selection:bg-orange-500 selection:text-zinc-950 pb-32">
-
       <main className="max-w-7xl mx-auto px-6 py-8 space-y-8">
         {/* Título e Barra de Pesquisa */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
