@@ -98,7 +98,7 @@ export interface Config {
       | PayloadMigrationsSelect<true>;
   };
   db: {
-    defaultIDType: number;
+    defaultIDType: string;
   };
   fallbackLocale: null;
   globals: {};
@@ -136,7 +136,7 @@ export interface UserAuthOperations {
  * via the `definition` "users".
  */
 export interface User {
-  id: number;
+  id: string;
   name: string;
   role: "admin" | "distributor" | "customer";
   updatedAt: string;
@@ -164,7 +164,7 @@ export interface User {
  * via the `definition` "media".
  */
 export interface Media {
-  id: number;
+  id: string;
   alt: string;
   updatedAt: string;
   createdAt: string;
@@ -183,8 +183,8 @@ export interface Media {
  * via the `definition` "drives".
  */
 export interface Drive {
-  id: number;
-  distributor: number | Distributor;
+  id: string;
+  distributor: string | Distributor;
   title: string;
   type: "SSD" | "Flash Drive" | "HDD";
   condition: "Novo" | "Usado";
@@ -199,9 +199,9 @@ export interface Drive {
  * via the `definition` "distributors".
  */
 export interface Distributor {
-  id: number;
+  id: string;
   nodeName: string;
-  user: number | User;
+  user: string | User;
   country: string;
   city: string;
   shipping?: {
@@ -218,7 +218,7 @@ export interface Distributor {
  * via the `definition` "models".
  */
 export interface Model {
-  id: number;
+  id: string;
   name: string;
   publisher: string;
   quantization: string;
@@ -238,8 +238,8 @@ export interface Model {
  * via the `definition` "orders".
  */
 export interface Order {
-  id: number;
-  distributor: number | Distributor;
+  id: string;
+  distributor: string | Distributor;
   customerInfo: {
     name: string;
     email: string;
@@ -247,8 +247,8 @@ export interface Order {
     city: string;
     address: string;
   };
-  models: (number | Model)[];
-  drive: number | Drive;
+  models: (string | Model)[];
+  drive: string | Drive;
   shippingType: "Nacional" | "Internacional";
   totalPriceUSD: number;
   status: "Pendente" | "Enviado" | "Entregue";
@@ -260,7 +260,7 @@ export interface Order {
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
-  id: number;
+  id: string;
   key: string;
   data:
     | {
@@ -277,36 +277,36 @@ export interface PayloadKv {
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
-  id: number;
+  id: string;
   document?:
     | ({
         relationTo: "users";
-        value: number | User;
+        value: string | User;
       } | null)
     | ({
         relationTo: "media";
-        value: number | Media;
+        value: string | Media;
       } | null)
     | ({
         relationTo: "drives";
-        value: number | Drive;
+        value: string | Drive;
       } | null)
     | ({
         relationTo: "distributors";
-        value: number | Distributor;
+        value: string | Distributor;
       } | null)
     | ({
         relationTo: "models";
-        value: number | Model;
+        value: string | Model;
       } | null)
     | ({
         relationTo: "orders";
-        value: number | Order;
+        value: string | Order;
       } | null);
   globalSlug?: string | null;
   user: {
     relationTo: "users";
-    value: number | User;
+    value: string | User;
   };
   updatedAt: string;
   createdAt: string;
@@ -316,10 +316,10 @@ export interface PayloadLockedDocument {
  * via the `definition` "payload-preferences".
  */
 export interface PayloadPreference {
-  id: number;
+  id: string;
   user: {
     relationTo: "users";
-    value: number | User;
+    value: string | User;
   };
   key?: string | null;
   value?:
@@ -339,7 +339,7 @@ export interface PayloadPreference {
  * via the `definition` "payload-migrations".
  */
 export interface PayloadMigration {
-  id: number;
+  id: string;
   name?: string | null;
   batch?: number | null;
   updatedAt: string;

@@ -5,15 +5,10 @@ import Link from "next/link";
 import {
   Search,
   HardDrive,
-  ShoppingBag,
   ArrowRight,
   Filter,
   Check,
   Plus,
-  Trash2,
-  Cpu,
-  Layers,
-  Info,
 } from "lucide-react";
 
 // Mock de modelos GGUF curados

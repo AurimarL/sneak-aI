@@ -5,15 +5,12 @@ import Link from "next/link";
 import {
   ArrowLeft,
   Truck,
-  HardDrive,
   CheckCircle2,
   ShieldCheck,
   MapPin,
   PackageCheck,
-  Filter,
   Search,
   AlertCircle,
-  Tag,
 } from "lucide-react";
 
 // Mock expandido de Distribuidores com diferentes condições, países e cidades

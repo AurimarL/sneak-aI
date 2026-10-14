@@ -1,21 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import {
   HardDrive,
   Truck,
   PackageCheck,
   Plus,
   Save,
-  Globe2,
-  Building2,
   CheckCircle2,
   Clock,
-  ExternalLink,
   Trash2,
-  DollarSign,
-  Layers,
 } from "lucide-react";
 
 // Mock de dados iniciais para demonstração
